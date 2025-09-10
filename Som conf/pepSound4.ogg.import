@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://o5wmdw2gwppw"
+path="res://.godot/imported/pepSound4.ogg-32c8343f56d72e5c7d8d6bbf0d1acf0d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Jogo SplashBuum/Som conf/pepSound4.ogg"
+dest_files=["res://.godot/imported/pepSound4.ogg-32c8343f56d72e5c7d8d6bbf0d1acf0d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

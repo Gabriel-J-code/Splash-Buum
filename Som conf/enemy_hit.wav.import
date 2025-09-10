@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dl4yidw5y7bgb"
+path="res://.godot/imported/enemy_hit.wav-c9ab0e5fb8282370aa7d5abc674feac7.sample"
+
+[deps]
+
+source_file="res://Jogo SplashBuum/Som conf/enemy_hit.wav"
+dest_files=["res://.godot/imported/enemy_hit.wav-c9ab0e5fb8282370aa7d5abc674feac7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

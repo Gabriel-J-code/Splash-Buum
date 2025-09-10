@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c40afuy5ff532"
+path="res://.godot/imported/powerUp2.ogg-cd9083c454ffad498a17b67424109146.oggvorbisstr"
+
+[deps]
+
+source_file="res://Jogo SplashBuum/Som conf/powerUp2.ogg"
+dest_files=["res://.godot/imported/powerUp2.ogg-cd9083c454ffad498a17b67424109146.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
