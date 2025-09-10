@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3lx3lrlwveoa"
+path="res://.godot/imported/error_007.ogg-7417d0cf15177c931d19aa498d89bb1a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Jogo SplashBuum/Som conf/error_007.ogg"
+dest_files=["res://.godot/imported/error_007.ogg-7417d0cf15177c931d19aa498d89bb1a.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

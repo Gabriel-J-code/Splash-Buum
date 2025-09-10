@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvwjro1hbkx27"
+path="res://.godot/imported/question_003.ogg-a2f66c5e058b9498f5d1c7ba93460706.oggvorbisstr"
+
+[deps]
+
+source_file="res://Jogo SplashBuum/Som conf/question_003.ogg"
+dest_files=["res://.godot/imported/question_003.ogg-a2f66c5e058b9498f5d1c7ba93460706.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

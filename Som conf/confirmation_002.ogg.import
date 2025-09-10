@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7r3ya0ed4uh3"
+path="res://.godot/imported/confirmation_002.ogg-3204c96c7526d7f95278b4ac3d04ba9d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Jogo SplashBuum/Som conf/confirmation_002.ogg"
+dest_files=["res://.godot/imported/confirmation_002.ogg-3204c96c7526d7f95278b4ac3d04ba9d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
