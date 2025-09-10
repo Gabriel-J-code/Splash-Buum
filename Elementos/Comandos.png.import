@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1gox8tkdfpiv"
-path="res://.godot/imported/Comandos.png-6ba3e7e47e981acd613d4cfbac09cb14.ctex"
+path="res://.godot/imported/Comandos.png-01108c52ae851244bc5da1e70c3b739e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Elementos/Comandos.png"
-dest_files=["res://.godot/imported/Comandos.png-6ba3e7e47e981acd613d4cfbac09cb14.ctex"]
+source_file="res://Elementos/Comandos.png"
+dest_files=["res://.godot/imported/Comandos.png-01108c52ae851244bc5da1e70c3b739e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c66em6a3c54aw"
-path="res://.godot/imported/GameOver.png-f087d72dea53e2e0df463dad7df306b3.ctex"
+path="res://.godot/imported/GameOver.png-a66c2bbad9a6696f8db5df27ca1ca26c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Som - btn e game over/GameOver.png"
-dest_files=["res://.godot/imported/GameOver.png-f087d72dea53e2e0df463dad7df306b3.ctex"]
+source_file="res://Som - btn e game over/GameOver.png"
+dest_files=["res://.godot/imported/GameOver.png-a66c2bbad9a6696f8db5df27ca1ca26c.ctex"]
 
 [params]
 

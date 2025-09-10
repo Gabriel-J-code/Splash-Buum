@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://drj0h0tlyl35p"
-path="res://.godot/imported/jingles_PIZZA07.ogg-efd460c9036c1220d7b79f08701659c2.oggvorbisstr"
+path="res://.godot/imported/jingles_PIZZA07.ogg-64f522e0faa7f1e51d0f609bf6ec7551.oggvorbisstr"
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Som conf/jingles_PIZZA07.ogg"
-dest_files=["res://.godot/imported/jingles_PIZZA07.ogg-efd460c9036c1220d7b79f08701659c2.oggvorbisstr"]
+source_file="res://Som conf/jingles_PIZZA07.ogg"
+dest_files=["res://.godot/imported/jingles_PIZZA07.ogg-64f522e0faa7f1e51d0f609bf6ec7551.oggvorbisstr"]
 
 [params]
 

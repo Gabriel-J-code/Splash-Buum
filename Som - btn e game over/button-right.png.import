@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iw8xo48wj8ts"
-path="res://.godot/imported/button-right.png-fe8c0456dfb49f98115dabae36d9b9dd.ctex"
+path="res://.godot/imported/button-right.png-884044205ed5a5e4155331514b74cf48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Som - btn e game over/button-right.png"
-dest_files=["res://.godot/imported/button-right.png-fe8c0456dfb49f98115dabae36d9b9dd.ctex"]
+source_file="res://Som - btn e game over/button-right.png"
+dest_files=["res://.godot/imported/button-right.png-884044205ed5a5e4155331514b74cf48.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cayhpotum3po2"
-path="res://.godot/imported/Logo SplashBuum.png-425c8e01df554752d6e3effd7ffc000c.ctex"
+path="res://.godot/imported/Logo SplashBuum.png-1df83aea02506c2a0e3ff7d34046749b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Elementos/Logo SplashBuum.png"
-dest_files=["res://.godot/imported/Logo SplashBuum.png-425c8e01df554752d6e3effd7ffc000c.ctex"]
+source_file="res://Elementos/Logo SplashBuum.png"
+dest_files=["res://.godot/imported/Logo SplashBuum.png-1df83aea02506c2a0e3ff7d34046749b.ctex"]
 
 [params]
 

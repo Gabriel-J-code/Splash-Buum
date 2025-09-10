@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c3lx3lrlwveoa"
-path="res://.godot/imported/error_007.ogg-7417d0cf15177c931d19aa498d89bb1a.oggvorbisstr"
+path="res://.godot/imported/error_007.ogg-db093934c076b196cce65215e3f40350.oggvorbisstr"
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Som conf/error_007.ogg"
-dest_files=["res://.godot/imported/error_007.ogg-7417d0cf15177c931d19aa498d89bb1a.oggvorbisstr"]
+source_file="res://Som conf/error_007.ogg"
+dest_files=["res://.godot/imported/error_007.ogg-db093934c076b196cce65215e3f40350.oggvorbisstr"]
 
 [params]
 

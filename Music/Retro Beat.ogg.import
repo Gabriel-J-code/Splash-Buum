@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cbm47hkdxbsq0"
-path="res://.godot/imported/Retro Beat.ogg-1b60d4b916f45d3ace3bc507c862fc19.oggvorbisstr"
+path="res://.godot/imported/Retro Beat.ogg-59ce00c4e26b7dd5908480ce2959f111.oggvorbisstr"
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Music/Retro Beat.ogg"
-dest_files=["res://.godot/imported/Retro Beat.ogg-1b60d4b916f45d3ace3bc507c862fc19.oggvorbisstr"]
+source_file="res://Music/Retro Beat.ogg"
+dest_files=["res://.godot/imported/Retro Beat.ogg-59ce00c4e26b7dd5908480ce2959f111.oggvorbisstr"]
 
 [params]
 

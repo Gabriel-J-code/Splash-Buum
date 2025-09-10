@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://o5wmdw2gwppw"
-path="res://.godot/imported/pepSound4.ogg-32c8343f56d72e5c7d8d6bbf0d1acf0d.oggvorbisstr"
+path="res://.godot/imported/pepSound4.ogg-ace5b41409ec9f93e909218ea4c6acf6.oggvorbisstr"
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Som conf/pepSound4.ogg"
-dest_files=["res://.godot/imported/pepSound4.ogg-32c8343f56d72e5c7d8d6bbf0d1acf0d.oggvorbisstr"]
+source_file="res://Som conf/pepSound4.ogg"
+dest_files=["res://.godot/imported/pepSound4.ogg-ace5b41409ec9f93e909218ea4c6acf6.oggvorbisstr"]
 
 [params]
 
