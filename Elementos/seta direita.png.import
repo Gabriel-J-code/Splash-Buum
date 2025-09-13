@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp68borrg5rb3"
-path="res://.godot/imported/seta direita.png-497c06f16c64f24d27e3364baae2dc76.ctex"
+path="res://.godot/imported/seta direita.png-bc680b09f8a6f4df3f9b9f777eea6454.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Elementos/seta direita.png"
-dest_files=["res://.godot/imported/seta direita.png-497c06f16c64f24d27e3364baae2dc76.ctex"]
+source_file="res://Elementos/seta direita.png"
+dest_files=["res://.godot/imported/seta direita.png-bc680b09f8a6f4df3f9b9f777eea6454.ctex"]
 
 [params]
 

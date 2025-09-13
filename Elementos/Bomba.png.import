@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4pmb6enmmebg"
-path="res://.godot/imported/Bomba.png-0497447836a2fad82320abcbd9b94bb8.ctex"
+path="res://.godot/imported/Bomba.png-31dc3815cc1d31de7133d67f24bad258.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Elementos/Bomba.png"
-dest_files=["res://.godot/imported/Bomba.png-0497447836a2fad82320abcbd9b94bb8.ctex"]
+source_file="res://Elementos/Bomba.png"
+dest_files=["res://.godot/imported/Bomba.png-31dc3815cc1d31de7133d67f24bad258.ctex"]
 
 [params]
 

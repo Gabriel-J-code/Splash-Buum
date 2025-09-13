@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b2wiw6b51sfvs"
-path="res://.godot/imported/dogica.ttf-f5df6b4fba5395a9c1fe5a8e36faec39.fontdata"
+path="res://.godot/imported/dogica.ttf-f257dc3326e200e5073c07268adb1466.fontdata"
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Fontes/dogica.ttf"
-dest_files=["res://.godot/imported/dogica.ttf-f5df6b4fba5395a9c1fe5a8e36faec39.fontdata"]
+source_file="res://Fontes/dogica.ttf"
+dest_files=["res://.godot/imported/dogica.ttf-f257dc3326e200e5073c07268adb1466.fontdata"]
 
 [params]
 

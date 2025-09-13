@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5rv32mmesgql"
-path="res://.godot/imported/jogador 2 Perdedor.png-9a2fa8d4f121fbe8e2b80f4b77dadb75.ctex"
+path="res://.godot/imported/jogador 2 Perdedor.png-a3aee57d6b9fef5d933d444995747e30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Elementos/jogador 2 Perdedor.png"
-dest_files=["res://.godot/imported/jogador 2 Perdedor.png-9a2fa8d4f121fbe8e2b80f4b77dadb75.ctex"]
+source_file="res://Elementos/jogador 2 Perdedor.png"
+dest_files=["res://.godot/imported/jogador 2 Perdedor.png-a3aee57d6b9fef5d933d444995747e30.ctex"]
 
 [params]
 

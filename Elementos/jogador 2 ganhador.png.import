@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpatl327vxrlp"
-path="res://.godot/imported/jogador 2 ganhador.png-1a3f27fc968265cffb636a230e07d007.ctex"
+path="res://.godot/imported/jogador 2 ganhador.png-8202a76c50900a9a769c49a99de22872.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Elementos/jogador 2 ganhador.png"
-dest_files=["res://.godot/imported/jogador 2 ganhador.png-1a3f27fc968265cffb636a230e07d007.ctex"]
+source_file="res://Elementos/jogador 2 ganhador.png"
+dest_files=["res://.godot/imported/jogador 2 ganhador.png-8202a76c50900a9a769c49a99de22872.ctex"]
 
 [params]
 

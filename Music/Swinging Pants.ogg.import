@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://o22815wws8jh"
-path="res://.godot/imported/Swinging Pants.ogg-cb8b6d6ba94c95a30bcb2329c7e923cd.oggvorbisstr"
+path="res://.godot/imported/Swinging Pants.ogg-95f3c683a160444c87a81a4d5ef2019d.oggvorbisstr"
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Music/Swinging Pants.ogg"
-dest_files=["res://.godot/imported/Swinging Pants.ogg-cb8b6d6ba94c95a30bcb2329c7e923cd.oggvorbisstr"]
+source_file="res://Music/Swinging Pants.ogg"
+dest_files=["res://.godot/imported/Swinging Pants.ogg-95f3c683a160444c87a81a4d5ef2019d.oggvorbisstr"]
 
 [params]
 

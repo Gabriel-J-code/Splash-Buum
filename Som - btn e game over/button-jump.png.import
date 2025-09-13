@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1hrqc47dkgwj"
-path="res://.godot/imported/button-jump.png-024f234cf64cc9279967c1c25efdcf25.ctex"
+path="res://.godot/imported/button-jump.png-13254226750f22081c7e9309d8df11ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Som - btn e game over/button-jump.png"
-dest_files=["res://.godot/imported/button-jump.png-024f234cf64cc9279967c1c25efdcf25.ctex"]
+source_file="res://Som - btn e game over/button-jump.png"
+dest_files=["res://.godot/imported/button-jump.png-13254226750f22081c7e9309d8df11ee.ctex"]
 
 [params]
 

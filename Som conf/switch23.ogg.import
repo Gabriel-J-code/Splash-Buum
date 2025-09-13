@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cfdcylfy6nry"
-path="res://.godot/imported/switch23.ogg-d96b04bcf768db8fbec605d6fcbf7868.oggvorbisstr"
+path="res://.godot/imported/switch23.ogg-ef755b4a35108974ecf94a7a1db60bc7.oggvorbisstr"
 
 [deps]
 
-source_file="res://Jogo SplashBuum/Som conf/switch23.ogg"
-dest_files=["res://.godot/imported/switch23.ogg-d96b04bcf768db8fbec605d6fcbf7868.oggvorbisstr"]
+source_file="res://Som conf/switch23.ogg"
+dest_files=["res://.godot/imported/switch23.ogg-ef755b4a35108974ecf94a7a1db60bc7.oggvorbisstr"]
 
 [params]
 
