@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b12w3bkiunl1p"]
+
+[ext_resource type="Script" uid="uid://dfc88lqoqckff" path="res://jogador/jogador.gd" id="1_5aga6"]
+[ext_resource type="Texture2D" uid="uid://bdllsfmaibiis" path="res://Elementos/jogador 1.png" id="1_gw4iw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5aga6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gw4iw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wq8wa"]
+radius = 20.0
+height = 56.0
+
+[node name="Jogador" type="Area2D"]
+script = ExtResource("1_5aga6")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.25, 0)
+scale = Vector2(1.0057471, 1)
+sprite_frames = SubResource("SpriteFrames_5aga6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_wq8wa")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="DelayBomba" type="Timer" parent="."]
+
+[connection signal="bomba" from="." to="." method="_on_bomba"]
+[connection signal="timeout" from="DelayBomba" to="." method="_on_timer_timeout"]

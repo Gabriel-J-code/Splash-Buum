@@ -1,7 +1,7 @@
 extends Control
 
 @export var maximo_jogadores: int = 2
-var jogadores_atuais: int = 1
+@export var jogadores_atuais: int = 1
 var item_foco: int = 0
 var itens_focaveis: Array = []
 
