@@ -1,0 +1,178 @@
+[gd_scene load_steps=7 format=3 uid="uid://cggq1788alfbn"]
+
+[ext_resource type="Texture2D" uid="uid://bma73fm2cmqbv" path="res://Jogo SplashBuum/Elementos/Fundo do cenario.png" id="1_rcp88"]
+[ext_resource type="FontFile" uid="uid://camj50so6lay8" path="res://Jogo SplashBuum/Fontes/dogicapixel.ttf" id="2_bc425"]
+[ext_resource type="Texture2D" uid="uid://1mdw4gv4cr21" path="res://Jogo SplashBuum/Elementos/seta esquerda.png" id="3_2dons"]
+[ext_resource type="Texture2D" uid="uid://cp68borrg5rb3" path="res://Jogo SplashBuum/Elementos/seta direita.png" id="4_npxyc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rcp88"]
+blend_mode = 4
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Theme" id="Theme_rj47k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 35.0
+offset_bottom = 40.0
+
+[node name="planoFundo" type="TextureRect" parent="ColorRect"]
+modulate = Color(0.3, 0.3, 0.3, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.885
+anchor_top = 9.243
+anchor_right = 15.885
+anchor_bottom = 9.243
+offset_left = -691.4
+offset_top = -462.72
+offset_right = 512.6
+offset_bottom = 217.28
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.15181, 1.36685)
+texture = ExtResource("1_rcp88")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_rcp88")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 178.0
+offset_top = 176.0
+offset_right = 1085.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_rj47k")
+
+[node name="ContMusic" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LbMusica" type="Label" parent="PanelContainer/VBoxContainer/ContMusic"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "Música"
+uppercase = true
+
+[node name="BtnDireiro" type="Button" parent="PanelContainer/VBoxContainer/ContMusic"]
+layout_mode = 2
+icon = ExtResource("3_2dons")
+
+[node name="LbVolume" type="Label" parent="PanelContainer/VBoxContainer/ContMusic"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "50"
+
+[node name="BtnEsquerdo" type="Button" parent="PanelContainer/VBoxContainer/ContMusic"]
+layout_mode = 2
+icon = ExtResource("4_npxyc")
+
+[node name="ContEfeit" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LbEfeito" type="Label" parent="PanelContainer/VBoxContainer/ContEfeit"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "efeitos sonoros"
+uppercase = true
+
+[node name="BtnDireiro" type="Button" parent="PanelContainer/VBoxContainer/ContEfeit"]
+layout_mode = 2
+icon = ExtResource("3_2dons")
+
+[node name="LbVolume" type="Label" parent="PanelContainer/VBoxContainer/ContEfeit"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "50"
+
+[node name="BtnEsquerdo" type="Button" parent="PanelContainer/VBoxContainer/ContEfeit"]
+layout_mode = 2
+icon = ExtResource("4_npxyc")
+
+[node name="ContDific" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LbDificuldade" type="Label" parent="PanelContainer/VBoxContainer/ContDific"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "Dificuldade computador"
+uppercase = true
+
+[node name="BtnDireiro" type="Button" parent="PanelContainer/VBoxContainer/ContDific"]
+layout_mode = 2
+icon = ExtResource("3_2dons")
+
+[node name="LbVolume" type="Label" parent="PanelContainer/VBoxContainer/ContDific"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "50"
+
+[node name="BtnEsquerdo" type="Button" parent="PanelContainer/VBoxContainer/ContDific"]
+layout_mode = 2
+icon = ExtResource("4_npxyc")
+
+[node name="ContTemp" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LbMusica" type="Label" parent="PanelContainer/VBoxContainer/ContTemp"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "tempo de jogo"
+uppercase = true
+
+[node name="BtnDireiro" type="Button" parent="PanelContainer/VBoxContainer/ContTemp"]
+layout_mode = 2
+icon = ExtResource("3_2dons")
+
+[node name="LbVolume" type="Label" parent="PanelContainer/VBoxContainer/ContTemp"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "3"
+
+[node name="LbVolume2" type="Label" parent="PanelContainer/VBoxContainer/ContTemp"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "min"
+uppercase = true
+
+[node name="BtnEsquerdo" type="Button" parent="PanelContainer/VBoxContainer/ContTemp"]
+layout_mode = 2
+icon = ExtResource("4_npxyc")
+
+[node name="BtnSair" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_bc425")
+theme_override_font_sizes/font_size = 40
+text = "SAIR"
