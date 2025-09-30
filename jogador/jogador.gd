@@ -1,11 +1,15 @@
-extends Area2D
+extends CharacterBody2D
 signal  hit
 @export var speed = 400
 var screen_size
 
+const BOMB_SCENE = preload("res://jogador/bomba.tscn") # AJUSTE ESTE CAMINHO!
+var max_bombs: int = 1 # Quantas bombas o jogador pode ter ativas
+var current_bombs: int = 0
+
 signal bomba
 
-var n_jogador = 1
+@export var n_jogador = 1
 
 var move_direita
 var move_esquerda
@@ -72,21 +76,30 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 
-
-func _on_body_entered(body: Node2D) -> void:
-	hide()
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled", true)
-
-
-func colocar_bomba() -> void:
-	$Label.text = "bomba"
-	$DelayBomba.start()
-
-
-func _on_timer_timeout() -> void:
-	$Label.text = ""
-
-
 func _on_bomba() -> void:
-	colocar_bomba()
+	place_bomb() 
+
+func place_bomb() -> void:
+	if current_bombs < max_bombs:
+		current_bombs += 1
+
+		# 1. Cria a bomba
+		var bomb_instance = BOMB_SCENE.instantiate()
+		get_parent().add_child(bomb_instance) # Adiciona ao nó pai (cena principal)
+
+		# 2. Conexões e Inicialização
+		# O TileMap (GameManager) está no nó pai, presumivelmente:
+		var game_manager = get_parent().find_child("TileMap") 
+
+		if game_manager:
+			# Conecta a explosão ao Game Manager para pintar
+			bomb_instance.exploded.connect(game_manager.color_area_3x3)
+			# Conecta o sinal de remoção da bomba para liberar o limite do jogador
+			bomb_instance.bomb_removed.connect(_on_bomb_removed)
+			
+		# Inicializa a bomba, passando o ID do jogador e a posição
+		bomb_instance.initialize(n_jogador, global_position)
+
+# Novo método para ser chamado quando a bomba explodir e for removida
+func _on_bomb_removed() -> void:
+	current_bombs -= 1

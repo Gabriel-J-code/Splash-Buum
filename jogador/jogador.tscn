@@ -18,7 +18,7 @@ animations = [{
 radius = 20.0
 height = 56.0
 
-[node name="Jogador" type="Area2D"]
+[node name="Jogador" type="CharacterBody2D"]
 script = ExtResource("1_5aga6")
 metadata/_edit_group_ = true
 
@@ -28,14 +28,15 @@ scale = Vector2(1.0057471, 1)
 sprite_frames = SubResource("SpriteFrames_5aga6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_wq8wa")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+text = "ok"
 
 [node name="DelayBomba" type="Timer" parent="."]
 
 [connection signal="bomba" from="." to="." method="_on_bomba"]
-[connection signal="timeout" from="DelayBomba" to="." method="_on_timer_timeout"]
