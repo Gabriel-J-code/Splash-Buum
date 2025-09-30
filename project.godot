@@ -19,6 +19,7 @@ config/icon="uid://cayhpotum3po2"
 [global_group]
 
 game_manager=""
+bombs=""
 
 [input]
 

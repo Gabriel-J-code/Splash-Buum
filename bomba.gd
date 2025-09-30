@@ -28,8 +28,8 @@ func initialize(id: int, player_position: Vector2) -> void:
 	player_id = id
 	
 	# 1. Alinha a posição da bomba exatamente ao centro do tile (Grid Snap)
-	var grid_x = round(player_position.x / TILE_SIZE) * TILE_SIZE
-	var grid_y = round(player_position.y / TILE_SIZE) * TILE_SIZE
+	var grid_x = round((player_position.x - 32) / TILE_SIZE) * TILE_SIZE + 32
+	var grid_y = round((player_position.y - 32)/ TILE_SIZE) * TILE_SIZE + 32
 	global_position = Vector2(grid_x, grid_y)
 	
 	# 2. Inicia o Timer de Fusível
@@ -49,6 +49,7 @@ func _on_fuser_timer_timeout() -> void:
 	
 	# 3. TODO: Instanciar a cena/animação visual da explosão circular aqui
 	$AnimatedSprite2D.play()
+	
 	
 	# 4. Remove a bomba da cena
 	queue_free() # Replace with function body.

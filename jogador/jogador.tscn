@@ -41,6 +41,4 @@ animation = &"Jogador2"
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_wq8wa")
 
-[node name="DelayBomba" type="Timer" parent="."]
-
 [connection signal="bomba" from="." to="." method="_on_bomba"]

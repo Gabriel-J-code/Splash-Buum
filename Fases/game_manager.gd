@@ -82,3 +82,21 @@ func update_score() -> void:
 	print("Jogador 2 (Rosa): ", score_p2)
 	
 	# TODO: Implementar a lógica para atualizar os Labels/ProgressBars na UI aqui.
+func is_tile_occupied_by_bomb(world_position: Vector2) -> bool:
+	"""
+	Verifica se existe um nó 'Bomb' na célula do TileMap.
+	"""
+	# 1. Converte a posição mundial para a coordenada da célula no TileMap
+	var cell_coords = local_to_map(world_position)
+	# 2. Converte a coordenada da célula de volta para a posição mundial central
+	var tile_center = map_to_local(cell_coords)
+	# 3. Usa um método de checagem de área (como um raycast ou get_tree())
+	#    Para simplificar, vamos iterar sobre todos os filhos da cena principal
+	#    que estão centralizados no tile_center.
+	# Melhor forma: Se você criou um grupo "bombs" ou "bomb" para suas bombas,
+	# itere sobre o grupo e compare a posição.
+	for bomb_node in get_tree().get_nodes_in_group("bombs"):
+		# Se a bomba estiver exatamente na posição central da célula
+		if bomb_node.global_position.is_equal_approx(tile_center):
+			return true
+	return false

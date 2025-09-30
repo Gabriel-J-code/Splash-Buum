@@ -4,10 +4,8 @@ extends CharacterBody2D
 var screen_size
 
 const BOMB_SCENE = preload("res://jogador/bomba.tscn") # AJUSTE ESTE CAMINHO!
-var max_bombs: int = 1 # Quantas bombas o jogador pode ter ativas
+var max_bombs: int = 2 # Quantas bombas o jogador pode ter ativas
 var current_bombs: int = 0
-
-signal bomba
 
 @export var n_jogador = 1
 
@@ -55,8 +53,8 @@ func _process(delta: float) -> void:
 		velocity.y += 1
 	if Input.is_action_pressed(move_cima):
 		velocity.y -= 1
-	if Input.is_action_pressed(b_colocar_bomba):
-		bomba.emit()
+	if Input.is_action_just_pressed(b_colocar_bomba):
+		place_bomb()
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -81,30 +79,40 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false	
 
-func _on_bomba() -> void:
-	place_bomb() 
-
 func place_bomb() -> void:
-	if current_bombs < max_bombs:
-		current_bombs += 1
+	var game_manager = get_tree().get_first_node_in_group("game_manager")
+	
+	# Checagem de segurança (não deve acontecer se a cena estiver configurada)
+	if not game_manager:
+		print("Erro: GameManager não encontrado!")
+		return
+		
+	# 1. VERIFICAÇÃO DE LIMITE (Max Bombs)
+	if current_bombs >= max_bombs:
+		return
+		
+	# 2. VERIFICAÇÃO DE SOBREPOSIÇÃO
+	if game_manager.is_tile_occupied_by_bomb(global_position):
+		print("Já existe uma bomba neste tile.")
+		return
+		
+	# SE PASSOU NAS DUAS CONDIÇÕES:
+	
+	# 3. Cria a bomba e aumenta o contador
+	current_bombs += 1
+	
+	var bomb_instance = BOMB_SCENE.instantiate()
+	get_parent().add_child(bomb_instance)
+	
+	# ** Adicione a bomba ao grupo 'bombs' **
+	bomb_instance.add_to_group("bombs") 
 
-		# 1. Cria a bomba
-		var bomb_instance = BOMB_SCENE.instantiate()
-		get_parent().add_child(bomb_instance) # Adiciona ao nó pai (cena principal)
-
-		# 2. Conexões e Inicialização
-		# O TileMap (GameManager) está no nó pai, presumivelmente:
-		var game_manager = get_tree().get_first_node_in_group("game_manager")
-		#var game_manager = get_parent().find_child("TileMap") 		
-
-		if game_manager:
-			# Conecta a explosão ao Game Manager para pintar
-			bomb_instance.exploded.connect(game_manager.color_area_3x3)
-			# Conecta o sinal de remoção da bomba para liberar o limite do jogador
-			bomb_instance.bomb_removed.connect(_on_bomb_removed)
-			
-		# Inicializa a bomba, passando o ID do jogador e a posição
-		bomb_instance.initialize(n_jogador, global_position)
+	# 4. Conexões e Inicialização
+	bomb_instance.exploded.connect(game_manager.color_area_3x3)
+	bomb_instance.bomb_removed.connect(_on_bomb_removed)
+	
+	# Inicializa a bomba, que fará o alinhamento no grid
+	bomb_instance.initialize(n_jogador, global_position)
 
 # Novo método para ser chamado quando a bomba explodir e for removida
 func _on_bomb_removed() -> void:	
