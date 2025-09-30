@@ -1,5 +1,5 @@
 extends CharacterBody2D
-signal  hit
+#signal  hit
 @export var speed = 400
 var screen_size
 
@@ -20,7 +20,7 @@ var extra
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
-	screen_size = get_viewport_rect().size
+	screen_size = get_viewport_rect().size	
 	if n_jogador == 1:
 		move_direita = "j1_move_direita"
 		move_esquerda = "j1_move_esquerda"
@@ -28,6 +28,7 @@ func _ready() -> void:
 		move_cima = "j1_move_cima"
 		b_colocar_bomba = "j1_confirma"
 		extra = "j1_cancela"
+		$AnimatedSprite2D.animation = "Jogador1"
 	elif n_jogador == 2:
 		move_direita = "j2_move_direita"
 		move_esquerda = "j2_move_esquerda"
@@ -35,6 +36,9 @@ func _ready() -> void:
 		move_cima = "j2_move_cima"
 		b_colocar_bomba = "j2_confirma"
 		extra = "j2_cancela"
+		$AnimatedSprite2D.animation = "Jogador2"
+		$AnimatedSprite2D.flip_h = true
+		
 		
 	#hide()
 	
@@ -42,7 +46,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var velocity = Vector2.ZERO # The player's movement vector.
+	velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed(move_direita):
 		velocity.x += 1
 	if Input.is_action_pressed(move_esquerda):
@@ -61,6 +65,7 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.stop()
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
+	move_and_slide()
 		
 	#animação
 	if velocity.x != 0:
@@ -74,7 +79,7 @@ func _process(delta: float) -> void:
 func start(pos):
 	position = pos
 	show()
-	$CollisionShape2D.disabled = false
+	$CollisionShape2D.disabled = false	
 
 func _on_bomba() -> void:
 	place_bomb() 
@@ -89,7 +94,8 @@ func place_bomb() -> void:
 
 		# 2. Conexões e Inicialização
 		# O TileMap (GameManager) está no nó pai, presumivelmente:
-		var game_manager = get_parent().find_child("TileMap") 
+		var game_manager = get_tree().get_first_node_in_group("game_manager")
+		#var game_manager = get_parent().find_child("TileMap") 		
 
 		if game_manager:
 			# Conecta a explosão ao Game Manager para pintar
@@ -101,5 +107,5 @@ func place_bomb() -> void:
 		bomb_instance.initialize(n_jogador, global_position)
 
 # Novo método para ser chamado quando a bomba explodir e for removida
-func _on_bomb_removed() -> void:
+func _on_bomb_removed() -> void:	
 	current_bombs -= 1

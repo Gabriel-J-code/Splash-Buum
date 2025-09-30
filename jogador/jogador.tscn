@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b12w3bkiunl1p"]
+[gd_scene load_steps=6 format=3 uid="uid://b12w3bkiunl1p"]
 
 [ext_resource type="Script" uid="uid://dfc88lqoqckff" path="res://jogador/jogador.gd" id="1_5aga6"]
 [ext_resource type="Texture2D" uid="uid://bdllsfmaibiis" path="res://Elementos/jogador 1.png" id="1_gw4iw"]
+[ext_resource type="Texture2D" uid="uid://lawp6re2jch3" path="res://Elementos/jogador 2.png" id="3_wq8wa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5aga6"]
 animations = [{
@@ -10,7 +11,15 @@ animations = [{
 "texture": ExtResource("1_gw4iw")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Jogador1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wq8wa")
+}],
+"loop": true,
+"name": &"Jogador2",
 "speed": 5.0
 }]
 
@@ -26,16 +35,11 @@ metadata/_edit_group_ = true
 position = Vector2(-0.25, 0)
 scale = Vector2(1.0057471, 1)
 sprite_frames = SubResource("SpriteFrames_5aga6")
+animation = &"Jogador2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = 1
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_wq8wa")
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "ok"
 
 [node name="DelayBomba" type="Timer" parent="."]
 

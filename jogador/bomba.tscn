@@ -42,6 +42,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.17, 0.17)
 sprite_frames = SubResource("SpriteFrames_8wf3i")
+offset = Vector2(32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mq7dp")

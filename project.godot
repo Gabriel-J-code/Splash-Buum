@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/image="uid://cayhpotum3po2"
 config/icon="uid://cayhpotum3po2"
 
+[global_group]
+
+game_manager=""
+
 [input]
 
 j1_move_cima={
