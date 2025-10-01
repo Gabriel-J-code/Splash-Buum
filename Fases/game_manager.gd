@@ -188,6 +188,7 @@ func is_tile_occupied_by_bomb(world_position: Vector2) -> bool:
 
 
 func _on_game_timer_timeout() -> void:
+
 	# 1. Certifica-se de que a pontuação está finalizada
 	update_score() 
 	
