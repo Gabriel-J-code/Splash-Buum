@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct78ke4pguh6u"]
+
+[ext_resource type="Script" uid="uid://b0yipd7h5f0os" path="res://pause_menu.gd" id="1_05uyy"]
+[ext_resource type="Texture2D" uid="uid://c1gox8tkdfpiv" path="res://Elementos/Comandos.png" id="1_nwcfo"]
+[ext_resource type="FontFile" uid="uid://camj50so6lay8" path="res://Fontes/dogicapixel.ttf" id="2_05uyy"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05uyy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.24313726)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.5
+offset_top = -324.0
+offset_right = 415.5
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(456, 311)
+layout_mode = 2
+texture = ExtResource("1_nwcfo")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Continuar" type="Button" parent="ColorRect/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_05uyy")
+theme_override_font_sizes/font_size = 24
+text = "Continuar"
+
+[node name="Recomeçar" type="Button" parent="ColorRect/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_05uyy")
+theme_override_font_sizes/font_size = 24
+text = "Recomeçar"
+
+[node name="Configurações" type="Button" parent="ColorRect/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_05uyy")
+theme_override_font_sizes/font_size = 24
+text = "Configurações"
+
+[node name="MenuInicial" type="Button" parent="ColorRect/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_05uyy")
+theme_override_font_sizes/font_size = 24
+text = "Menu Inicial"
+
+[connection signal="pressed" from="ColorRect/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Recomeçar" to="." method="_on_recomeçar_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Configurações" to="." method="_on_configurações_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/MenuInicial" to="." method="_on_menu_inicial_pressed"]
