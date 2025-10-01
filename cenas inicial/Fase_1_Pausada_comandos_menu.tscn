@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://bka27mdb0f0x4"]
+
+[ext_resource type="Texture2D" uid="uid://ckbxpk8rpjip2" path="res://Jogo SplashBuum/Elementos/fase1_comando.png" id="1_5d1xy"]
+[ext_resource type="FontFile" uid="uid://camj50so6lay8" path="res://Jogo SplashBuum/Fontes/dogicapixel.ttf" id="1_f3t0y"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -330.0
+offset_top = -73.0
+offset_right = 264.0
+offset_bottom = 238.0
+scale = Vector2(1, 0.959999)
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_5d1xy")
+
+[node name="PanelContMenu" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ContMenu" type="VBoxContainer" parent="HBoxContainer/PanelContMenu"]
+clip_children = 2
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 5
+
+[node name="BtnContinuar" type="Button" parent="HBoxContainer/PanelContMenu/ContMenu"]
+layout_mode = 2
+size_flags_vertical = 4
+localize_numeral_system = false
+theme_override_fonts/font = ExtResource("1_f3t0y")
+theme_override_font_sizes/font_size = 10
+text = "CONTINUAR"
+
+[node name="BtnRecomecar" type="Button" parent="HBoxContainer/PanelContMenu/ContMenu"]
+layout_mode = 2
+size_flags_vertical = 4
+localize_numeral_system = false
+theme_override_fonts/font = ExtResource("1_f3t0y")
+theme_override_font_sizes/font_size = 10
+text = "RECOMEÇAR"
+
+[node name="BtnConfiguracao" type="Button" parent="HBoxContainer/PanelContMenu/ContMenu"]
+layout_mode = 2
+size_flags_vertical = 4
+localize_numeral_system = false
+theme_override_fonts/font = ExtResource("1_f3t0y")
+theme_override_font_sizes/font_size = 10
+text = "CONFIGURAÇÕES"
+
+[node name="BtnMenu" type="Button" parent="HBoxContainer/PanelContMenu/ContMenu"]
+layout_mode = 2
+size_flags_vertical = 4
+localize_numeral_system = false
+theme_override_fonts/font = ExtResource("1_f3t0y")
+theme_override_font_sizes/font_size = 10
+text = "MENU INICIAL"
