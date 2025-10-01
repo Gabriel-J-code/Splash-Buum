@@ -1,0 +1,143 @@
+[gd_scene load_steps=9 format=3 uid="uid://rkiu30f755h2"]
+
+[ext_resource type="Script" uid="uid://ctkdpqm5mpftf" path="res://cena_final.gd" id="1_pyqaf"]
+[ext_resource type="FontFile" uid="uid://camj50so6lay8" path="res://Fontes/dogicapixel.ttf" id="1_s6mkf"]
+[ext_resource type="Texture2D" uid="uid://bejr6g143fprc" path="res://Frame 72.png" id="2_pyqaf"]
+[ext_resource type="Texture2D" uid="uid://bma73fm2cmqbv" path="res://Elementos/Fundo do cenario.png" id="2_w7fre"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rcp88"]
+blend_mode = 4
+light_mode = 2
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hlxi"]
+bg_color = Color(0.05490196, 0.05490196, 0.05490196, 0.827451)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13333334, 0.07450981, 0.8, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_7rffl"]
+default_base_scale = 0.24
+
+[sub_resource type="Theme" id="Theme_rj47k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+script = ExtResource("1_pyqaf")
+
+[node name="planoFundo" type="TextureRect" parent="."]
+modulate = Color(0.3, 0.3, 0.3, 1)
+layout_mode = 1
+offset_right = 996.85236
+offset_bottom = 563.0063
+scale = Vector2(1.1556375, 1.36685)
+texture = ExtResource("2_w7fre")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -239.0
+offset_right = 234.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_pyqaf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VencedorLabel" type="Label" parent="BoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_s6mkf")
+theme_override_font_sizes/font_size = 40
+text = "Vencedor"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Player1Label" type="Label" parent="BoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.05490196, 0.6666667, 0.92941177, 1)
+theme_override_fonts/font = ExtResource("1_s6mkf")
+theme_override_font_sizes/font_size = 32
+text = "Jogador 1"
+
+[node name="Player2Label" type="Label" parent="BoxContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92941177, 0.07450981, 0.48235294, 1)
+theme_override_fonts/font = ExtResource("1_s6mkf")
+theme_override_font_sizes/font_size = 32
+text = "Jogador 2"
+
+[node name="PanelContainer" type="PanelContainer" parent="BoxContainer/VBoxContainer"]
+process_mode = 2
+z_index = 5
+y_sort_enabled = true
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_rcp88")
+use_parent_material = true
+clip_contents = true
+layout_direction = 1
+layout_mode = 2
+tooltip_auto_translate_mode = 1
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hlxi")
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/VBoxContainer/PanelContainer"]
+clip_contents = true
+layout_mode = 2
+theme = SubResource("Theme_7rffl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/VBoxContainer/PanelContainer/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_rj47k")
+theme_override_constants/separation = 30
+
+[node name="BtnNovaPartida" type="Button" parent="BoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_s6mkf")
+theme_override_font_sizes/font_size = 40
+text = "NOVA PARTIDA"
+
+[node name="BtnMenuInicial" type="Button" parent="BoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_s6mkf")
+theme_override_font_sizes/font_size = 40
+text = "MENU INICIAL"
+
+[connection signal="pressed" from="BoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/BtnNovaPartida" to="." method="_on_nova_partida_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/BtnMenuInicial" to="." method="_on_menu_inicial_pressed"]
