@@ -1,0 +1,228 @@
+[gd_scene load_steps=15 format=4 uid="uid://b1b3f53ptreb1"]
+
+[ext_resource type="Texture2D" uid="uid://c6ars0qfj5dyb" path="res://Elementos/Cenario/cenario.png" id="1_15gpn"]
+[ext_resource type="Texture2D" uid="uid://bma73fm2cmqbv" path="res://Elementos/Fundo do cenario.png" id="1_iciit"]
+[ext_resource type="Script" uid="uid://dkin6ckr07udi" path="res://Fases/fase_1.gd" id="1_nxvxg"]
+[ext_resource type="FontFile" uid="uid://camj50so6lay8" path="res://Fontes/dogicapixel.ttf" id="2_0ecli"]
+[ext_resource type="PackedScene" uid="uid://b12w3bkiunl1p" path="res://jogador/jogador.tscn" id="2_5me8a"]
+[ext_resource type="Script" uid="uid://mmfsq1i1l84g" path="res://Fases/game_manager.gd" id="4_0ecli"]
+[ext_resource type="PackedScene" uid="uid://ct78ke4pguh6u" path="res://pause_menu.tscn" id="7_8dqw3"]
+
+[sub_resource type="Theme" id="Theme_nxvxg"]
+
+[sub_resource type="Theme" id="Theme_8dqw3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xv5d"]
+font = ExtResource("2_0ecli")
+font_size = 24
+font_color = Color(0.05490196, 0.6666667, 0.92941177, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fn3an"]
+font = ExtResource("2_0ecli")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_p0e0y"]
+font = ExtResource("2_0ecli")
+font_size = 24
+font_color = Color(0.92941177, 0.07450981, 0.48235294, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ecli"]
+texture = ExtResource("1_15gpn")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nxvxg"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0ecli")
+
+[node name="Fase 1" type="Node2D"]
+z_index = -10
+script = ExtResource("1_nxvxg")
+
+[node name="Control" type="Control" parent="."]
+z_index = -10
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 642.0
+size_flags_vertical = 8
+
+[node name="Fundo Cenario" type="TextureRect" parent="Control"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iciit")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="Control2" type="Control" parent="Control/Fundo Cenario"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 105.0
+grow_horizontal = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Fundo Cenario/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelJ1" type="Panel" parent="Control/Fundo Cenario/Control2/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Fundo Cenario/Control2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainerJ1" type="MarginContainer" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_nxvxg")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainerJ1" type="VBoxContainer" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ1"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = SubResource("Theme_8dqw3")
+
+[node name="IdJodador1" type="Label" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ1/VBoxContainerJ1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+text = "Jogador 1"
+label_settings = SubResource("LabelSettings_3xv5d")
+horizontal_alignment = 1
+
+[node name="PercJogador1" type="Label" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ1/VBoxContainerJ1"]
+layout_mode = 2
+text = "0 %"
+label_settings = SubResource("LabelSettings_3xv5d")
+horizontal_alignment = 1
+
+[node name="MarginContainerJ2" type="MarginContainer" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = SubResource("Theme_nxvxg")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainerJ1" type="VBoxContainer" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = SubResource("Theme_8dqw3")
+
+[node name="IdTempo" type="Label" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ2/VBoxContainerJ1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+text = "Tempo"
+label_settings = SubResource("LabelSettings_fn3an")
+horizontal_alignment = 1
+
+[node name="LabelTempo" type="Label" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ2/VBoxContainerJ1"]
+layout_mode = 2
+text = "180 s"
+label_settings = SubResource("LabelSettings_fn3an")
+horizontal_alignment = 1
+
+[node name="MarginContainerJ3" type="MarginContainer" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_nxvxg")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainerJ1" type="VBoxContainer" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = SubResource("Theme_8dqw3")
+
+[node name="IdJodador2" type="Label" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ3/VBoxContainerJ1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+text = "Jogador 2"
+label_settings = SubResource("LabelSettings_p0e0y")
+horizontal_alignment = 1
+
+[node name="PercJogador2" type="Label" parent="Control/Fundo Cenario/Control2/MarginContainer/MarginContainer/HBoxContainer/MarginContainerJ3/VBoxContainerJ1"]
+layout_mode = 2
+text = "0 %"
+label_settings = SubResource("LabelSettings_p0e0y")
+horizontal_alignment = 1
+
+[node name="TileMap" type="TileMap" parent="." groups=["game_manager"]]
+tile_set = SubResource("TileSet_nxvxg")
+format = 2
+script = ExtResource("4_0ecli")
+
+[node name="Piso" type="TileMapLayer" parent="TileMap"]
+z_index = -5
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAACAAMAAAAAAAEAAAADAAMAAAAAAAEAAAAEAAMAAAAAAAEAAAAFAAMAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAEAAAAIAAMAAAAAAAEAAAAJAAMAAAAAAAEAAAAKAAMAAAAAAAEAAAALAAMAAAAAAAEAAAAMAAMAAAAAAAEAAAANAAMAAAAAAAEAAAAOAAMAAAAAAAEAAAAPAAMAAAAAAAEAAAAPAAgAAAAAAAEAAAAOAAgAAAAAAAEAAAANAAgAAAAAAAEAAAAMAAgAAAAAAAEAAAALAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAADAAgAAAAAAAEAAAACAAgAAAAAAAEAAAADAAQAAAAAAAEAAAAEAAQAAAAAAAEAAAAFAAQAAAAAAAEAAAAGAAQAAAAAAAEAAAAHAAQAAAAAAAEAAAAIAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAALAAQAAAAAAAEAAAAMAAQAAAAAAAEAAAANAAQAAAAAAAEAAAAOAAQAAAAAAAEAAAAPAAQAAAAAAAEAAAAPAAUAAAAAAAEAAAAPAAYAAAAAAAEAAAAPAAcAAAAAAAEAAAAOAAcAAAAAAAEAAAANAAcAAAAAAAEAAAAMAAcAAAAAAAEAAAALAAcAAAAAAAEAAAAKAAcAAAAAAAEAAAAJAAcAAAAAAAEAAAAIAAcAAAAAAAEAAAAHAAcAAAAAAAEAAAAGAAcAAAAAAAEAAAAFAAcAAAAAAAEAAAAEAAcAAAAAAAEAAAADAAcAAAAAAAEAAAACAAcAAAAAAAEAAAACAAYAAAAAAAEAAAACAAUAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAAFAAUAAAAAAAEAAAAGAAUAAAAAAAEAAAAHAAUAAAAAAAEAAAAIAAUAAAAAAAEAAAAJAAUAAAAAAAEAAAAKAAUAAAAAAAEAAAALAAUAAAAAAAEAAAAMAAUAAAAAAAEAAAANAAUAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAYAAAAAAAEAAAANAAYAAAAAAAEAAAAMAAYAAAAAAAEAAAALAAYAAAAAAAEAAAAKAAYAAAAAAAEAAAAJAAYAAAAAAAEAAAAIAAYAAAAAAAEAAAAHAAYAAAAAAAEAAAAGAAYAAAAAAAEAAAAFAAYAAAAAAAEAAAAEAAYAAAAAAAEAAAADAAYAAAAAAAEAAAACAAQAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_nxvxg")
+occlusion_enabled = false
+collision_enabled = false
+
+[node name="Parede" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+use_parent_material = true
+tile_map_data = PackedByteArray("AAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAgAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAMAAAAAAAAAAAAQAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_nxvxg")
+occlusion_enabled = false
+navigation_enabled = false
+
+[node name="GameTimer" type="Timer" parent="TileMap"]
+wait_time = 60.0
+
+[node name="Jogador1" parent="." instance=ExtResource("2_5me8a")]
+z_index = 2
+position = Vector2(230, 285)
+
+[node name="Jogador2" parent="." groups=["Bomba"] instance=ExtResource("2_5me8a")]
+z_index = 2
+position = Vector2(926, 476)
+n_jogador = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_8dqw3")]
+process_mode = 2
+z_index = 10
+
+[connection signal="timeout" from="TileMap/GameTimer" to="TileMap" method="_on_game_timer_timeout"]
+[connection signal="ir_para_configuracoes" from="PauseMenu" to="." method="_on_configuracoes_pressed"]
+[connection signal="ir_para_menu_inicial" from="PauseMenu" to="." method="_on_menu_inicial_pressed"]
+[connection signal="recarregar_jogo" from="PauseMenu" to="." method="_on_recomecar_pressed"]
+[connection signal="resumo_jogo" from="PauseMenu" to="." method="_on_continuar_pressed"]

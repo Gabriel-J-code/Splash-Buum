@@ -12,9 +12,14 @@ config_version=5
 
 config/name="Splash Buum!"
 run/main_scene="uid://tydx55i2vvyi"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/image="uid://cayhpotum3po2"
+config/icon="uid://cayhpotum3po2"
 
-config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+[global_group]
+
+game_manager=""
+bombs=""
 
 [input]
 

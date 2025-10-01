@@ -3175,7 +3175,7 @@ icon = ExtResource("4_6xia1")
 [node name="NJogadores" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "1 Jogador"
+text = "2 Jogadores"
 label_settings = SubResource("LabelSettings_hehbg")
 horizontal_alignment = 1
 uppercase = true
@@ -3204,5 +3204,6 @@ volume_db = 1.0
 autoplay = true
 playback_type = 1
 
+[connection signal="pressed" from="VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BtnEsquerdo" to="." method="_on_btn_esquerdo_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/BtnDireito" to="." method="_on_btn_direito_pressed"]

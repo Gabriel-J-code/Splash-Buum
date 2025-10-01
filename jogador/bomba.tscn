@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv1drd03ucqnt"]
+
+[ext_resource type="Script" uid="uid://n4f13ihx58n5" path="res://bomba.gd" id="1_e3njd"]
+[ext_resource type="Texture2D" uid="uid://b4pmb6enmmebg" path="res://Elementos/Bomba.png" id="2_iivfv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab14j"]
+atlas = ExtResource("2_iivfv")
+region = Rect2(0, 0, 375, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b6a8"]
+atlas = ExtResource("2_iivfv")
+region = Rect2(375, 0, 375, 376)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwa3k"]
+atlas = ExtResource("2_iivfv")
+region = Rect2(750, 0, 375, 376)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wf3i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab14j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b6a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwa3k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mq7dp"]
+radius = 21.470911
+
+[node name="Bomba" type="Area2D" groups=["bombs"]]
+position = Vector2(23, 24)
+script = ExtResource("1_e3njd")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.17, 0.17)
+sprite_frames = SubResource("SpriteFrames_8wf3i")
+speed_scale = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mq7dp")
+
+[node name="FuserTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="FuserTimer" to="." method="_on_fuser_timer_timeout"]

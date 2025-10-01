@@ -1,7 +1,7 @@
 extends Control
 
 @export var maximo_jogadores: int = 2
-var jogadores_atuais: int = 1
+@export var jogadores_atuais: int = 1
 var item_foco: int = 0
 var itens_focaveis: Array = []
 
@@ -79,3 +79,7 @@ func _on_btn_esquerdo_pressed() -> void:
 
 func _on_btn_direito_pressed() -> void:
 	mudar_jogadores(1)
+
+
+func _on_play_btn_pressed() -> void:
+	get_tree().change_scene_to_file("res://Fases/fase_1.tscn") # Replace with function body.
