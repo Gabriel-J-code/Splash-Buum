@@ -185,6 +185,6 @@ func is_tile_occupied_by_bomb(world_position: Vector2) -> bool:
 
 func _on_game_timer_timeout() -> void:
 	# O tempo acabou!
-	_process(0) # Atualiza o Label para 00:00
+	_process(0) # Atualiza o Label para 00:00	
 	print("FIM DE JOGO!")
 	# TODO: Implementar a tela de placar final (Resultado)# Replace with function body.
