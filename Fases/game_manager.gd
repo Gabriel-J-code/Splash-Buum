@@ -17,6 +17,9 @@ const PLAYER_TO_TILE_COORDS = {
 	2: TILE_COORDS_P2,
 }
 
+var score_p1: int = 0
+var score_p2: int = 0
+	
 var perc_jogador_1: Label = null
 var perc_jogador_2: Label = null
 
@@ -25,6 +28,7 @@ var total_colorable_tiles: float = 0.0
 var game_duration: float = 0.0
 var time_label: Label = null # Variável para guardar a referência ao Label do tempo
 
+const  GAME_OVER_SCENE = preload("res://cenaFinal.tscn") 
 func _ready() -> void:
 	# --- Referenciando os Labels ---	
 	# 1. Encontrar o nó raiz (geralmente get_parent() se o TileMap for filho de Fase 1)
@@ -123,8 +127,8 @@ func update_score() -> void:
 	Calcula e atualiza a pontuação de cada jogador.
 	"""
 	# 1. ZERAR AS PONTUAÇÕES
-	var score_p1: int = 0
-	var score_p2: int = 0
+	score_p1 = 0
+	score_p2 = 0
 	var score_neutral: int = 0 # Incluímos o score neutro para o cálculo total
 
 	# Itera sobre todas as células que foram alteradas no TileMap
@@ -184,7 +188,41 @@ func is_tile_occupied_by_bomb(world_position: Vector2) -> bool:
 
 
 func _on_game_timer_timeout() -> void:
-	# O tempo acabou!
-	_process(0) # Atualiza o Label para 00:00
-	print("FIM DE JOGO!")
-	# TODO: Implementar a tela de placar final (Resultado)# Replace with function body.
+	# 1. Certifica-se de que a pontuação está finalizada
+	update_score() 
+	
+	# 2. Determina o Vencedor
+	var winner_id: int
+	
+	# Assumindo que score_p1 e score_p2 são variáveis globais ou calculadas
+	# com os valores finais (o que já está sendo feito em update_score)
+	var final_score_p1 = score_p1 # Use a pontuação final calculada
+	var final_score_p2 = score_p2 
+
+	if final_score_p1 > final_score_p2:
+		winner_id = 1
+	elif final_score_p2 > final_score_p1:
+		winner_id = 2
+	else:
+		# Em caso de empate, você pode definir um ID especial (ex: 0)
+		winner_id = 0 
+		print("EMPATE!")
+
+	# 3. Transição para a Tela de Vitória
+	transition_to_game_over(winner_id)
+	
+func transition_to_game_over(winner_id: int) -> void:
+	# 1. Pausa o jogo (se não estiver já pausado)
+	get_tree().paused = true 
+	
+	# 2. Instancia a nova cena de Game Over
+	var game_over_screen = GAME_OVER_SCENE.instantiate()
+	
+	# 3. Adiciona a cena de Game Over no nó raiz da árvore
+	get_tree().root.add_child(game_over_screen) 
+	
+	# 4. Chama a função de inicialização da tela de Game Over
+	game_over_screen.initialize(winner_id)
+	
+	# 5. Opcional: Remove a cena do jogo (Fase 1) do loop, se desejar.
+	# get_parent().queue_free()
